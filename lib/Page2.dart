@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Page2 extends StatelessWidget {
+  final String username;
+  final String role;
+  final String sekolah;
+  final String deskripsi;
+
+  const Page2({super.key, required this.username, required this.role, required this.sekolah, required this.deskripsi});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,17 +38,22 @@ class Page2 extends StatelessWidget {
                   height: 100), // Spacer untuk memberi jarak dari AppBar
 
               // Bagian Foto dan Nama
-              const Center(
+              Center(
                 child: Column(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 80.0,
                       backgroundImage: AssetImage('assets/images/angger-1.jpg'),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
-                      "Angger Kalehandya Sutarto",
-                      style: TextStyle(fontSize: 22, color: Colors.white),
+                      username, // Menampilkan nama dari input
+                      style: const TextStyle(fontSize: 22, color: Colors.white),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      role, // Menampilkan nama sekolah dari input
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ],
                 ),
